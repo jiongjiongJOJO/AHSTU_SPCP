@@ -2,6 +2,7 @@ import requests
 import random
 import os
 import demjson
+import time
 
 userid = os.getenv("USERID")
 password = os.getenv("PASSWORD")
@@ -61,6 +62,7 @@ def Temper(time):
 
 for i in range(time_temper):
     Temper(i)
+    time.slepp(2)
 
 # 疫情填报
 def yiqing():
