@@ -42,7 +42,7 @@ def Temper(time):
         date = ['8', '2']
     # 随机体温
     Temper = random.randint(0, 9)
-    headers = {'Connection': 'keep-alive', 'Cache-Control': 'max-age=0','Accept-Encoding':'gzip, deflate'
+    headers = {'Connection': 'keep-alive', 'Cache-Control': 'max-age=0','Accept-Encoding':'gzip, deflate',
                'Upgrade-Insecure-Requests': '1', 'Origin': 'http://xgb.ahstu.edu.cn',
                'Content-Type': 'application/x-www-form-urlencoded',
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 Edg/85.0.564.70',
@@ -56,13 +56,9 @@ def Temper(time):
     if ('填报成功！' in response.text):
         print('体温填报-填报成功！')
     else:
-        url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=' + str(
-            time + 1) + '失败&desp=' + response.text
+        url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=体温填报第 ' + str(
+            time + 1) + ' 次失败&desp=' + response.text
         requests.get(url_server)
-
-for i in range(time_temper):
-    Temper(i)
-    time.slepp(2)
 
 # 疫情填报
 def yiqing():
@@ -80,3 +76,10 @@ def yiqing():
     else:
         url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=疫情填报失败&desp=' + response.text
         requests.get(url_server)
+
+
+time_temper = 0
+for i in range(time_temper):
+    Temper(i)
+    time.sleep(2)
+yiqing()
