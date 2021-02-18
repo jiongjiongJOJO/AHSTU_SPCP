@@ -18,7 +18,7 @@ codeInput = ''
 for i in range(4):
     codeInput += selectChar[random.randint(0, 54)]
 # 登录
-headers = {'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1',
+headers = {'Connection': 'close', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1',
            'Origin': 'http://xgb.ahstu.edu.cn', 'Content-Type': 'application/x-www-form-urlencoded',
            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 Edg/85.0.564.70',
            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -41,7 +41,7 @@ def Temper(time):
         date = ['8', '2']
     # 随机体温
     Temper = random.randint(0, 9)
-    headers = {'Connection': 'keep-alive', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
+    headers = {'Connection': 'close', 'Pragma': 'no-cache', 'Cache-Control': 'no-cache',
                'Upgrade-Insecure-Requests': '1', 'Origin': 'http://xgb.ahstu.edu.cn',
                'Content-Type': 'application/x-www-form-urlencoded',
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36 Edg/85.0.564.70',
@@ -64,7 +64,7 @@ for i in range(time_temper):
 
 # 疫情填报
 def yiqing():
-    headers = {'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1',
+    headers = {'Connection': 'close', 'Cache-Control': 'max-age=0', 'Upgrade-Insecure-Requests': '1',
                'Origin': 'http://xgb.ahstu.edu.cn', 'Content-Type': 'application/x-www-form-urlencoded',
                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36',
                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
