@@ -78,7 +78,6 @@ def yiqing():
         requests.get(url_server)
 
 
-time_temper = 0
 for i in range(time_temper):
     Temper(i)
     time.sleep(2)
