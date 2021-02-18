@@ -55,6 +55,7 @@ def Temper(time):
     if ('填报成功！' in response.text):
         print('体温填报-填报成功！')
     else:
+        print('第'+str(time+1)+'次体温填报失败')
         url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=体温填报第 ' + str(
             time + 1) + ' 次失败&desp=' + response.text
         requests.get(url_server)
@@ -73,6 +74,7 @@ def yiqing():
     if ('提交成功！' in response.text):
         print('疫情填报-提交成功！')
     else:
+        print('疫情填报失败')
         url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=疫情填报失败&desp=' + response.text
         requests.get(url_server)
 
