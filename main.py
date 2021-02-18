@@ -1,11 +1,13 @@
 import requests
 import random
 import os
-import json
+import demjson
 
-userid = os.getenv("userid")
-password = os.getenv("password")
-data_yiqing = os.getenv("data")
+userid = os.getenv("USERID")
+password = os.getenv("PASSWORD")
+data_yiqing = os.getenv("DATA")
+send_key = os.getenv("SEND")
+
 time_temper = 3
 
 
@@ -53,7 +55,7 @@ def Temper(time):
     if ('填报成功！' in response.text):
         print('体温填报-填报成功！')
     else:
-        url_server = 'https://sc.ftqq.com/SCU121329T8a40a3b5f214b975f336cd5c59e7f41a5f994d347e2ba.send?text=体温填报' + str(
+        url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=' + str(
             time + 1) + '失败&desp=' + response.text
         requests.get(url_server)
 
@@ -68,11 +70,11 @@ def yiqing():
                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
                'Referer': 'http://xgb.ahstu.edu.cn/SPCP/Web/Report/Index', 'Accept-Language': 'zh-CN,zh;q=0.9', }
 
-    data = json.loads(data_yiqing)
+    data = demjson.decode(data_yiqing)
     response = requests.post('http://xgb.ahstu.edu.cn/SPCP/Web/Report/Index', headers=headers, cookies=cookies,
                              data=data)
     if ('提交成功！' in response.text):
         print('疫情填报-提交成功！')
     else:
-        url_server = 'https://sc.ftqq.com/SCU121329T8a40a3b5f214b975f336cd5c59e7f41a5f994d347e2ba.send?text=疫情填报失败&desp=' + response.text
+        url_server = 'https://sctapi.ftqq.com/'+send_key+'.send?title=疫情填报失败&desp=' + response.text
         requests.get(url_server)
