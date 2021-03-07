@@ -67,9 +67,8 @@ def yiqing():
                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
                'Referer': 'http://xgb.ahstu.edu.cn/SPCP/Web/Report/Index', 'Accept-Language': 'zh-CN,zh;q=0.9', }
 
-    data = demjson.decode(data_yiqing)
     response = requests.post('http://xgb.ahstu.edu.cn/SPCP/Web/Report/Index', headers=headers, cookies=cookies,
-                             data=data)
+                             data=data_yiqing)
     if ('提交成功！' in response.text):
         print('疫情填报-提交成功！')
     else:
