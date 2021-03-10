@@ -52,21 +52,34 @@
 其中`Data`的获取:
 
 + 第一步：打开“学生健康情况填报”，填写正确的健康信息
+
 ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/1.jpg)
+
 + 第二步：打开浏览器的开发者工具（在学生健康情况填报页面按下键盘的F12按钮），并选择标签页的Network（网络）标签
+
 ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/2.jpg)
+
 + 第三步：回到页面，提交“学生健康情况填报”信息，接着打开 开发者工具
+
 ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/3.jpg)
+
 + 第四步：在开发者工具页面找到“Index”字样，右键点击后选择Copy - Copy as cURL(bash)
-+ ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/4.jpg)
+
+![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/4.jpg)
+
 + 第五步：打开[Convert cURL command syntax](https://curl.trillworks.com/),粘贴刚刚复制的内容
-+ ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/5.jpg)
+
+![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/5.jpg)
+
+
 + 第六步：在右侧找到如下格式的信息，并将内容复制（包括前后两个大括号“{}”）
+
 > data = {
 >   xxx:xxx,
 >   xxx:xxx,
 >   xxx:xxx
 > }
+
 ![](https://raw.githubusercontent.com/jiongjiongJOJO/AHSTU_SPCP/master/img/6.jpg)
  
 ### 3.将参数填到Secrets
