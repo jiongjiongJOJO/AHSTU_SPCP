@@ -79,6 +79,8 @@ DATA | 上一步中复制的内容
 USERID | 学号
 PASSWORD | 密码
 SEND | push推送的token（选填）
+
+
 ![](https://github.com/jiongjiongJOJO/AHSTU_SPCP/img/7.jpg)
 ![](https://github.com/jiongjiongJOJO/AHSTU_SPCP/img/8.jpg)
 
