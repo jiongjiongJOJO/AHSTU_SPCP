@@ -3,12 +3,23 @@ import random
 import os
 import demjson
 import time
+import json
 
 userid = os.getenv("USERID")
 password = os.getenv("PASSWORD")
 data_yiqing = os.getenv("DATA")
 send_key = os.getenv("SEND")
+def push(key,title,content):
 
+    url = 'http://pushplus.hxtrip.com/send'
+    data = {
+        "token": key,
+        "title": title,
+        "content": content
+    }
+    body = json.dumps(data).encode(encoding='utf-8')
+    headers = {'Content-Type': 'application/json'}
+    requests.post(url, data=body, headers=headers)
 time_temper = 3
 
 selectChar = ["2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "j", "k", "m", "n",
@@ -56,8 +67,7 @@ def Temper(time):
         print('体温填报-填报成功！')
     else:
         print('第'+str(time+1)+'次体温填报失败')
-        url_server = 'https://sc.ftqq.com/'+send_key+'.send?text=体温填报'+str(time+1)+'失败&desp=' + response.text
-        requests.get(url_server)
+        push(send_key,'安徽科技学院 - 体温填报'+str(time+1)+'失败',response.text)
 
 # 疫情填报
 def yiqing():
@@ -74,12 +84,12 @@ def yiqing():
         print('疫情填报-提交成功！')
     else:
         print('疫情填报失败')
-        url_server = 'https://sc.ftqq.com/'+send_key+'.send?text=疫情填报失败&desp=' + response.text
-        requests.get(url_server)
+        push(send_key,'安徽科技学院 - 疫情填报失败',response.text)
 
 
 
 for i in range(time_temper):
     Temper(i)
     time.sleep(1)
-yiqing()
+if(data_yiqing != ''):
+    yiqing()
