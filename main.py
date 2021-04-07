@@ -15,7 +15,7 @@ def push(key,title,content):
     data = {
         "token": key,
         "title": title,
-        "content": content
+        "content": "<xmp>"+content+"</xmp>"
     }
     body = json.dumps(data).encode(encoding='utf-8')
     headers = {'Content-Type': 'application/json'}
