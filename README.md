@@ -114,8 +114,7 @@ SEND | push推送的token（选填）
 # 通知推送方式
 
 ## pushplus机器人
-！！！此功能暂未修改，目前使用的是server酱，过几天会修改为pushplus
-类似于钉钉机器人，只需要一个`token`，参考[获取pushplus的token](http://pushplus.hxtrip.com/doc/guide/api.html#%E4%B8%80%E3%80%81%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3)。
+只需要一个`token`，参考[获取pushplus的token](http://pushplus.hxtrip.com/doc/guide/api.html#%E4%B8%80%E3%80%81%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3)。
 
 # 申明
 
